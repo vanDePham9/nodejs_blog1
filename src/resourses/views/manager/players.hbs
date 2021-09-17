@@ -1,0 +1,28 @@
+<div class="mt-4">
+    <h3>List Players</h3>
+
+    <table class="table mt-4">
+        <thead>
+            <tr class="table-primary">
+                <th scope="col">STT</th>
+                <th scope="col">Name</th>
+                <th scope="col">Age</th>
+                <th scope="col" colspan="2">Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each info}}
+            <tr>
+                <th scope="row">{{sum @index 1}}</th>
+                <td>{{this.name}}</td>
+                <td>{{this.age}}</td>
+                <td>{{this.description}}</td>
+                <td>
+                    <a href="/info/{{this._id}}/update" class="btn btn-primary">Update</a>
+                    <a href="/info/{{this._id}}/delete" class="btn btn-danger mt-2">Delete</a>
+                </td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>
